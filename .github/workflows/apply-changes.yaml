@@ -1,0 +1,29 @@
+name: Apply changes to DB
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-db:
+    name: "Update DB"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+     - uses: actions/checkout@v4
+     - uses: liquibase-github-actions/update-sql@v4.31.1
+       with:
+        changelogFile: "root-changelog.yaml"
+        url: ${{ vars.DB_JDBC_URL }}
+        username: ${{ secrets.DB_USER }}
+        password: ${{ secrets.DB_PASS }}
+        headless: true
+        logLevel: INFO
+     - uses: liquibase-github-actions/update@v4.31.1
+       with:
+        changelogFile: "root-changelog.yaml"
+        url: ${{ vars.DB_JDBC_URL }}
+        username: ${{ secrets.DB_USER }}
+        password: ${{ secrets.DB_PASS }}
+        headless: true
+        logLevel: INFO
