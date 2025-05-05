@@ -9,7 +9,7 @@
                         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
                         
     <changeSet id="1" author="product.app">
-        <tagDatabase tag="v1" />
+        <tagDatabase tag="v1" keepTagOnRollback="true"/>
     </changeSet>
 
 </databaseChangeLog>
