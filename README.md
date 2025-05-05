@@ -3,7 +3,7 @@ Examples for liquibase with GitHub Actions
 
 ### Contains:
 - Workflow for applying changes to DB (PostgreSQL)
-- Workflow for rolling back everyting applied after the mentioned tag (non inclusive)
+- Workflow for rolling back everyting applied after the mentioned tag
 - `.sql` files for applying changes and `.xml` for tags used for rollbacks
 - root-changelog.yaml is the root changelog entry point
 
