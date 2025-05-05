@@ -1,0 +1,8 @@
+databaseChangeLog:
+-  changeSet:
+    id:  1
+    author:  product.app
+    changes:
+    -  tagDatabase:
+        tag:  v1
+        keepTagOnRollback:  true
