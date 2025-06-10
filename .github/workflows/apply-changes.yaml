@@ -11,7 +11,7 @@ jobs:
       contents: read
     steps:
      - uses: actions/checkout@v4
-     - uses: liquibase-github-actions/update-sql@v4.31.1
+     - uses: liquibase-github-actions/update-sql@v4.32.0
        with:
         changelogFile: "root-changelog.yaml"
         url: ${{ vars.DB_JDBC_URL }}
@@ -19,7 +19,7 @@ jobs:
         password: ${{ secrets.DB_PASS }}
         headless: true
         logLevel: INFO
-     - uses: liquibase-github-actions/update@v4.31.1
+     - uses: liquibase-github-actions/update@v4.32.0
        with:
         changelogFile: "root-changelog.yaml"
         url: ${{ vars.DB_JDBC_URL }}
